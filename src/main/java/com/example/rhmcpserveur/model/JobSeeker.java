@@ -17,7 +17,7 @@ public class JobSeeker extends Person {
     private LocalDate availableFrom;
     private String preferredJobTitle;
     private String preferredWorkLocation;
-    private String preferredWorkType; // Remote, Hybrid, On-site
+    private String preferredWorkType;
     private String resumeSummary;
     private boolean activelyLooking;
 }

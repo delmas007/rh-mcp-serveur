@@ -1,5 +1,6 @@
 package com.example.rhmcpserveur.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -26,17 +27,20 @@ public class Person {
     private String phoneNumber;
     private String address;
 
-    @ManyToMany(cascade = {CascadeType.MERGE})
-    @JoinTable(
-        name = "person_skills",
-        joinColumns = @JoinColumn(name = "person_id"),
-        inverseJoinColumns = @JoinColumn(name = "skill_id")
-    )
-    private Set<Skill> skills = new HashSet<>();
-
-    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Experience> experiences = new HashSet<>();
-
-    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Education> educations = new HashSet<>();
+//    @ManyToMany(cascade = {CascadeType.MERGE})
+//    @JoinTable(
+//        name = "person_skills",
+//        joinColumns = @JoinColumn(name = "person_id"),
+//        inverseJoinColumns = @JoinColumn(name = "skill_id")
+//    )
+//    @JsonIgnore
+//    private Set<Skill> skills = new HashSet<>();
+//
+//    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JsonIgnore
+//    private Set<Experience> experiences = new HashSet<>();
+//
+//    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JsonIgnore
+//    private Set<Education> educations = new HashSet<>();
 }

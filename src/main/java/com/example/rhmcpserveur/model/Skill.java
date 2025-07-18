@@ -1,5 +1,6 @@
 package com.example.rhmcpserveur.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,6 +21,7 @@ public class Skill {
     private String name;
     private String level; // e.g., Beginner, Intermediate, Advanced, Expert
     
-    @ManyToMany(mappedBy = "skills")
-    private Set<Person> persons = new HashSet<>();
+//    @ManyToMany(mappedBy = "skills")
+//    @JsonIgnore
+//    private Set<Person> persons = new HashSet<>();
 }
